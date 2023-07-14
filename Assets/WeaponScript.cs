@@ -17,9 +17,7 @@ public class WeaponScript : MonoBehaviour
         {
             x = playerScript.InputX;
             z = playerScript.InputZ;
-            Destroy(this, 3f);
+            Destroy(this.gameObject, 3f);
         }
     }
-
-   
 }

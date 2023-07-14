@@ -31,6 +31,7 @@ public class WeaponManager : MonoBehaviour
             
             Weapon1.parent = WeaponsParent.transform;
             Weapon1.GetComponent<Rigidbody>().velocity = transform.transform.forward * 20;
+            Destroy(Weapon1.gameObject, 1f);
             yield return new WaitForSeconds(0.2f);
         }
     }
