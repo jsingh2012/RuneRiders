@@ -13,8 +13,12 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] private float z = 0f;
     void Start()
     {
-        x = playerScript.InputX;
-        z = playerScript.InputZ;
+        if (playerScript)
+        {
+            x = playerScript.InputX;
+            z = playerScript.InputZ;
+            Destroy(this, 3f);
+        }
     }
 
    

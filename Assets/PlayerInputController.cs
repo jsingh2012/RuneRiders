@@ -19,7 +19,7 @@ public class PlayerInputController : MonoBehaviour
     
     void Start()
     {
-        controller = gameObject.AddComponent<CharacterController>();
+        controller = gameObject.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
