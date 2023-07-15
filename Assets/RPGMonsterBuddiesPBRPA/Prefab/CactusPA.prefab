@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 7769598065701365474}
   - component: {fileID: 974827201}
   - component: {fileID: 974827202}
+  - component: {fileID: 974827203}
   m_Layer: 0
   m_Name: CactusPA
   m_TagString: Untagged
@@ -511,8 +512,8 @@ Transform:
   m_GameObject: {fileID: 7427070853888570003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2947016869698456476}
   - {fileID: 5436476740146464623}
@@ -548,7 +549,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7427070853888570003}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.9249363, z: 1}
@@ -565,6 +566,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20456d3d1d82044e9ae3ec8bd31d002d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &974827203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7427070853888570003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10b852e2e2064ca39fe944b16da30b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 0.5
 --- !u!1 &7712155012871449178
 GameObject:
   m_ObjectHideFlags: 0

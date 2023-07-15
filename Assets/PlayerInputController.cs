@@ -11,7 +11,7 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] public float InputZ = 0f;
     // Start is called before the first frame update
     private CharacterController controller;
-    private Vector3 playerVelocity;
+    [SerializeField] private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float playerSpeed = 2.0f;
     private float jumpHeight = 1.0f;
