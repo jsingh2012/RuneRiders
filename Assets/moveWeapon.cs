@@ -8,12 +8,15 @@ public class moveWeapon : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private float minimumDistance = 999999999f;
     [SerializeField] private Transform nearestEnemy;
-    [SerializeField] private float moveSpeed = 200f;
+    [SerializeField] private float moveSpeed = 5f;
+    private float diffx = 1;
+    private float diffz = 1;
     
-    private void Awake()
+    private void Start()
     {
-        minimumDistance = 99999999f;
+        minimumDistance = 10f;
         Debug.Log("moveWeapon childCount "+EnemyManager.Instance.enemyHolder.transform.childCount);
+        this.transform.position = PlayerScript.Instance.player.transform.position;
         for(int count = 0; count < EnemyManager.Instance.enemyHolder.transform.childCount; count++)
         {
             Transform enemy = EnemyManager.Instance.enemyHolder.transform.GetChild(count);
@@ -32,18 +35,14 @@ public class moveWeapon : MonoBehaviour
         if (nearestEnemy != null)
         {
             // Calculate the direction from the current position to the target position
-            Vector3 direction = nearestEnemy.transform.position - transform.position;
-            direction.y = 0;
-            Debug.Log("moveWeapon direction "+ direction + " nearestEnemy "+ nearestEnemy.transform.name);
+            diffx = nearestEnemy.transform.position.x - transform.position.x;
+            diffz = nearestEnemy.transform.position.z - transform.position.z;
             
-            // Normalize the direction vector to have a magnitude of 1
-
-            // Move the object towards the target
-            transform.position = new Vector3(transform.position.x +(direction.x * moveSpeed * Time.deltaTime),transform.position.y, transform.position.z +  (direction.z * moveSpeed * Time.deltaTime) ) ;
+            //transform.position = new Vector3(transform.position.x + (diffx * Time.deltaTime), transform.position.y, transform.position.z + (diffz * Time.deltaTime));
+            //Debug.Log("moveWeapon direction "+ diffx + " "+ diffz + " nearestEnemy "+ nearestEnemy.transform.name + " " +nearestEnemy.transform.position +" "+ transform.position);
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        Vector3 dir = new Vector3(diffx, 0, diffz).normalized;
+        transform.position = transform.position + dir * Time.deltaTime * moveSpeed;
+        
     }
 }

@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
         Instance = this;
         foreach (GameObject enemy in enemies)
         {
-            StartCoroutine(SpawnPrefabAtRandomLocation(enemy,(float)Random.Range(30, 30)));   
+            StartCoroutine(SpawnPrefabAtRandomLocation(enemy,(float)Random.Range(1, 3)));   
         }
     }
 
