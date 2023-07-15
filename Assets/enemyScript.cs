@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Jsingh "+ this.gameObject.name);   
+        //Debug.Log("Jsingh "+ this.gameObject.name);   
     }
 
     // Update is called once per frame
