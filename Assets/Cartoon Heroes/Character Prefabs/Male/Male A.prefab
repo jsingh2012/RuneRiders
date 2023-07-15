@@ -3010,9 +3010,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystickInput: {fileID: 0}
-  speed: 0.01
   InputX: 0
   InputZ: 0
+  playerSpeed: 6
 --- !u!143 &2029044872
 CharacterController:
   m_ObjectHideFlags: 0

@@ -27,12 +27,11 @@ public class WeaponManager : MonoBehaviour
         while (_canSpawnEnemy)
         {
             //Debug.Log("New Enemy "+ Time.time);
-            Transform Weapon1 = Instantiate(Weapon1Prefab, new Vector3(transform.position.x, transform.position.y+0.1f,transform.position.z ), Quaternion.identity);
-            
+            Transform Weapon1 = Instantiate(Weapon1Prefab, new Vector3(transform.position.x, transform.position.y+1f,transform.position.z ), Quaternion.identity);
             Weapon1.parent = WeaponsParent.transform;
-            Weapon1.GetComponent<Rigidbody>().velocity = transform.transform.forward * 20;
-            Destroy(Weapon1.gameObject, 1f);
-            yield return new WaitForSeconds(0.2f);
+            Weapon1.GetComponent<Rigidbody>().velocity = new  Vector3(10f * transform.transform.forward.x, 0f, 10f* transform.transform.forward.z);
+            Destroy(Weapon1.gameObject, 3);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

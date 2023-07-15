@@ -5,15 +5,14 @@ using UnityEngine;
 public class PlayerInputController : MonoBehaviour
 {
     [SerializeField] private FixedJoystick joystickInput;
-
-    [SerializeField] private float speed = 0.1f;
+    
     [SerializeField] public float InputX = 0f;
     [SerializeField] public float InputZ = 0f;
     // Start is called before the first frame update
     private CharacterController controller;
-    [SerializeField] private Vector3 playerVelocity;
+    private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
+    [SerializeField] private float playerSpeed = 2.0f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
     
