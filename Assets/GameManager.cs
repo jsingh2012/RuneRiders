@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     private Player player = new Player(100);
-    private int TotalGemValue = 0;
+    public int TotalGemValue { get; set; }
     private List<Gem> gems = new List<Gem>();
 
     private void Awake()
     {
+        Instance = this;
         GemScript.onGemCollected += collectGem;
     }
 

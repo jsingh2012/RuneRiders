@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager Instance;
     // Start is called before the first frame update
-    [SerializeField] private GameObject enemyHolder;
+    [SerializeField] public GameObject enemyHolder;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float minDistance = 10f;
     [SerializeField] private float maxDistance = 30f;
     private void Start()
     {
+        Instance = this;
         foreach (GameObject enemy in enemies)
         {
-            StartCoroutine(SpawnPrefabAtRandomLocation(enemy,(float)Random.Range(3, 3)));   
+            StartCoroutine(SpawnPrefabAtRandomLocation(enemy,(float)Random.Range(30, 30)));   
         }
     }
 

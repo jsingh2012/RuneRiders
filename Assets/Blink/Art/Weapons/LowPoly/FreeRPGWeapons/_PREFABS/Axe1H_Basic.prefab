@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1948462360350359321}
   - component: {fileID: 8097289541164263767}
   - component: {fileID: 1804674447}
+  - component: {fileID: 4022969622311424536}
   m_Layer: 0
   m_Name: Axe1H_Basic
   m_TagString: Weapon
@@ -99,7 +100,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &1804674447
 BoxCollider:
@@ -114,3 +115,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5253117, y: 0.80497473, z: 0.06049145}
   m_Center: {x: -0.01178205, y: 0.23242536, z: -0.000762837}
+--- !u!114 &4022969622311424536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2999748106215116}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7075449af19994558b8046dbf7a0fc96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumDistance: 0
+  nearestEnemy: {fileID: 0}
+  moveSpeed: 0
