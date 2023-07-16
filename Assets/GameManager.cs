@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
         GemScript.onGemCollected += collectGem;
     }
 
@@ -22,8 +24,12 @@ public class GameManager : MonoBehaviour
         TotalGemValue += gem.value;
         gems.Add(gem);
     }
-}
 
+    public void LoadPlayScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+}
 
 public class Player: IHealth
 {
