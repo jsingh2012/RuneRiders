@@ -6,6 +6,7 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance;
     // Start is called before the first frame update
     [SerializeField] public GameObject enemyHolder;
+    [SerializeField] public Transform enemyWithWeaponHolder = null;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float minDistance = 10f;

@@ -27,6 +27,11 @@ public class moveWeapon : MonoBehaviour
                 nearestEnemy = enemy;
             }
         }
+
+        if (nearestEnemy)
+        {
+            nearestEnemy.transform.parent = EnemyManager.Instance.enemyWithWeaponHolder.transform;
+        }
     }
 
     // Update is called once per frame
