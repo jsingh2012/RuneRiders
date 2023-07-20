@@ -16,7 +16,7 @@ public class GemsManager : MonoBehaviour
     {
         foreach (GameObject enemy in GemsPrefabs)
         {
-            StartCoroutine(SpawnPrefabAtRandomLocation(enemy,(float)Random.Range(3, 3)));   
+            StartCoroutine(SpawnPrefabAtRandomLocation(enemy,(float)Random.Range(1, 3)));   
         }
     }
 

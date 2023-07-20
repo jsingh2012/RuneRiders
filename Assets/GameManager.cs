@@ -9,22 +9,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     private Player player = new Player(100);
     public int TotalGemValue { get; set; }
-    private List<Gem> gems = new List<Gem>();
 
     private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        GemScript.onGemCollected += collectGem;
     }
-
-    void collectGem(Gem gem)
-    {
-        Debug.Log("collectGem "+ gem.value);
-        TotalGemValue += gem.value;
-        gems.Add(gem);
-    }
-
+    
     public void LoadPlayScene()
     {
         SceneManager.LoadScene(1);

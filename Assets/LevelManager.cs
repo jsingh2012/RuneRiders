@@ -7,11 +7,15 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
     public float levelTimer { get; set; }
+    public int Gems { get; set; }
+    private List<Gem> gems = new List<Gem>();
 
     private void Awake()
     {
         Instance = this;
         levelTimer = 0;
+        Gems = 0;
+        GemScript.onGemCollected += collectGem;
     }
 
     // Start is called before the first frame update
@@ -24,7 +28,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         levelTimer += Time.deltaTime;
-        Debug.Log("levelTimer "+levelTimer);
+        //Debug.Log("levelTimer "+levelTimer);
     }
 
     public string GetTime()
@@ -36,4 +40,15 @@ public class LevelManager : MonoBehaviour
         
         return time;
     }
+    public string GetGemsCount()
+    {
+        return Gems.ToString();
+    }
+    void collectGem(Gem gem)
+    {
+        Debug.Log("collectGem "+ gem.value);
+        Gems += gem.value;
+        gems.Add(gem);
+    }
+    
 }

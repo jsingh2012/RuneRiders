@@ -10,18 +10,19 @@ public class GemScript : MonoBehaviour
     
     public static OnGemCollected onGemCollected;
     
-    private Gem gem = new Gem(1);
+    private Gem gem;
 
     // Start is called before the first frame update
     private void Awake()
     {
+        gem = new Gem(1);
         gem.collected = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("GemScript other " + other.gameObject.tag);
-        if (gem.collected == false && other.CompareTag("Player"))
+        if (gem.collected == false && other.gameObject.CompareTag("Player"))
         {
             Collect();
         }
