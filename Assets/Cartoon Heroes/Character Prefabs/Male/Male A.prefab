@@ -2907,6 +2907,7 @@ GameObject:
   - component: {fileID: 2029044868}
   - component: {fileID: 2029044869}
   - component: {fileID: 2029044874}
+  - component: {fileID: 2063741766}
   m_Layer: 0
   m_Name: Male A
   m_TagString: Player
@@ -3013,7 +3014,7 @@ MonoBehaviour:
   joystickInput: {fileID: 0}
   InputX: 0
   InputZ: 0
-  playerSpeed: 6
+  playerSpeed: 10
 --- !u!143 &2029044872
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3039,14 +3040,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668188202801692}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56e0ad47ccdec4ecfb696d388a3555c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Weapon1Prefab: {fileID: 811062370745517174, guid: a9de5a98f016a334c9a1113e07b1a12f, type: 3}
   WeaponsParent: {fileID: 0}
-  _canSpawnEnemy: 1
+  canSpawnEnemy: 1
 --- !u!114 &2029044869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3073,6 +3074,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2690399, y: 2.0331104, z: 1}
   m_Center: {x: 0.026903968, y: -0.20446953, z: 0}
+--- !u!114 &2063741766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668188202801692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7109f4006f8e4e3eb48024fd0f48f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1672909316657688
 GameObject:
   m_ObjectHideFlags: 0
