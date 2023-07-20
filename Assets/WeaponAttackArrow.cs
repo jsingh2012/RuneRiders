@@ -23,7 +23,8 @@ public class WeaponAttackArrow : MonoBehaviour
         while (canSpawnEnemy)
         {
             //Debug.Log("New Enemy "+ Time.time);
-            Transform Weapon1 = Instantiate(Weapon1Prefab, new Vector3(transform.position.x, transform.position.y+1f,transform.position.z ), Quaternion.identity);
+            Transform Weapon1 = Instantiate(Weapon1Prefab);
+            Weapon1.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
             Weapon1.parent = WeaponsParent.transform;
             //Weapon1.GetComponent<Rigidbody>().velocity = new  Vector3(10f * transform.transform.forward.x, 0f, 10f* transform.transform.forward.z);
             Destroy(Weapon1.gameObject, 10);

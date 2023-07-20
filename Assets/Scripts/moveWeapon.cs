@@ -53,9 +53,12 @@ public class moveWeapon : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameObject e = Instantiate(vfx);
-        e.transform.position = transform.position;
-        e.transform.parent = LevelManager.Instance.VFXHolder.transform;
-        Debug.Log("OnDestroy");
+        if (vfx)
+        {
+            GameObject e = Instantiate(vfx);
+            e.transform.position = transform.position;
+            e.transform.parent = LevelManager.Instance.VFXHolder.transform;
+            Debug.Log("OnDestroy");
+        }
     }
 }
