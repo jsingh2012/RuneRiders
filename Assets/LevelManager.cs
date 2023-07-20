@@ -1,18 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
     [SerializeField] public GameObject VFXHolder;
+    [SerializeField] private GameObject GameOver;
     public float levelTimer { get; set; }
     public int Gems { get; set; }
     private List<Gem> gems = new List<Gem>();
 
     [SerializeField] private int[] powersups;
     public int nextPowerIndex = 1;
+    public int playerHealth = 100;
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class LevelManager : MonoBehaviour
         levelTimer = 0;
         Gems = 0;
         GemScript.onGemCollected += collectGem;
+        EnemyScript.onEnemyHitPlayer += damageHealth;
     }
 
     // Start is called before the first frame update
@@ -32,7 +36,20 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         levelTimer += Time.deltaTime;
+        if (playerHealth <= 0)
+        {
+            if (GameOver)
+            {
+                GameOver.SetActive(true);
+            }
+            Invoke("delayInvoke", 0f);
+        }
         //Debug.Log("levelTimer "+levelTimer);
+    }
+
+    public void delayInvoke()
+    {
+        Time.timeScale = 0;
     }
 
     public string GetTime()
@@ -44,6 +61,12 @@ public class LevelManager : MonoBehaviour
         
         return time;
     }
+
+    public int GetGemsHealth()
+    {
+        return playerHealth;
+    }
+    
     public string GetGemsCount()
     {
         int current = Gems - powersups[nextPowerIndex - 1];
@@ -67,6 +90,15 @@ public class LevelManager : MonoBehaviour
             nextPowerIndex++;
         }
         gems.Add(gem);
+    }
+    
+    public void damageHealth(int damange)
+    {
+        playerHealth -= damange;
+        if (playerHealth <= 0)
+        {
+            playerHealth = 0;
+        }
     }
     
 }

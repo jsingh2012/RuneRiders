@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public delegate void OnEnemyHitPlayer(int damange);
+    
+    public static OnEnemyHitPlayer onEnemyHitPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +22,21 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player"))
+        {
+            
+            Debug.Log("OnTriggerEnter other " + other.gameObject.name);
+            Destroy(this.gameObject);
+            if(onEnemyHitPlayer != null) onEnemyHitPlayer(10);
+            return;
+        }
         //Debug.Log("OnTriggerEnter other " + other.gameObject.name);
         if (other.CompareTag("Weapon"))
         {
-            if (other.gameObject.name.Contains("Mace1H"))
-            {
-                Debug.Log("OnTriggerEnter other " + other.gameObject.name);
-            }
             Destroy(other.transform.gameObject);
             Destroy(this.gameObject);
         }
+        
     }
 
     private void OnCollisionEnter(Collision other)

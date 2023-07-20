@@ -34,13 +34,17 @@ public class EnemyManager : MonoBehaviour
     
     private Vector3 GetRandomPointOn2DPlane()
     {
-        float angle = Random.Range(0f, 2f * Mathf.PI);
-        float distance = Random.Range(minDistance, maxDistance);
+        if (playerTransform)
+        {
+            float angle = Random.Range(0f, 2f * Mathf.PI);
+            float distance = Random.Range(minDistance, maxDistance);
 
-        float x = Mathf.Cos(angle) * distance;
-        float y = Mathf.Sin(angle) * distance;
+            float x = Mathf.Cos(angle) * distance;
+            float y = Mathf.Sin(angle) * distance;
 
-        Vector2 randomPoint = new Vector2(playerTransform.position.x +x , playerTransform.position.z + y);
-        return new Vector3(randomPoint.x, 0.6f, randomPoint.y);
+            Vector2 randomPoint = new Vector2(playerTransform.position.x + x, playerTransform.position.z + y);
+            return new Vector3(randomPoint.x, 0.6f, randomPoint.y);
+        } 
+        return Vector3.zero;
     }
 }
