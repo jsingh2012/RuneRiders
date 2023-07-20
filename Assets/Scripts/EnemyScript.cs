@@ -19,9 +19,13 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter other " + other.gameObject.name);
+        //Debug.Log("OnTriggerEnter other " + other.gameObject.name);
         if (other.CompareTag("Weapon"))
         {
+            if (other.gameObject.name.Contains("Mace1H"))
+            {
+                Debug.Log("OnTriggerEnter other " + other.gameObject.name);
+            }
             Destroy(other.transform.gameObject);
             Destroy(this.gameObject);
         }

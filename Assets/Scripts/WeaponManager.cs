@@ -5,7 +5,6 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private WeaponAttackArrow attackArrow;
-    
     // Start is called before the first frame update
    
     void Start()

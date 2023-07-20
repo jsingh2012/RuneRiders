@@ -101,6 +101,7 @@ MonoBehaviour:
   minimumDistance: 0
   nearestEnemy: {fileID: 0}
   moveSpeed: 20
+  vfx: {fileID: 100006, guid: 2e7e92bc7175b744ea40878dedfa79e4, type: 3}
 --- !u!65 &-5407400894335942404
 BoxCollider:
   m_ObjectHideFlags: 0

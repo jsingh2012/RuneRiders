@@ -11,6 +11,7 @@ public class moveWeapon : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     private float diffx = 1;
     private float diffz = 1;
+    [SerializeField] private GameObject vfx;
     
     private void Start()
     {
@@ -48,6 +49,13 @@ public class moveWeapon : MonoBehaviour
         }
         Vector3 dir = new Vector3(diffx, 0, diffz).normalized;
         transform.position = transform.position + dir * Time.deltaTime * moveSpeed;
-        
+    }
+
+    private void OnDestroy()
+    {
+        GameObject e = Instantiate(vfx);
+        e.transform.position = transform.position;
+        e.transform.parent = LevelManager.Instance.VFXHolder.transform;
+        Debug.Log("OnDestroy");
     }
 }

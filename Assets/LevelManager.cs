@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    [SerializeField] public GameObject VFXHolder;
     public float levelTimer { get; set; }
     public int Gems { get; set; }
     private List<Gem> gems = new List<Gem>();
