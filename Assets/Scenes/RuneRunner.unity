@@ -1985,23 +1985,11 @@ PrefabInstance:
       propertyPath: joystickInput
       value: 
       objectReference: {fileID: 1304756596}
-    - target: {fileID: 2029044868, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
-      propertyPath: attackArrow
-      value: 
-      objectReference: {fileID: 2063741766}
-    - target: {fileID: 2029044868, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
+    - target: {fileID: 2063741766, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
       propertyPath: WeaponsParent
       value: 
       objectReference: {fileID: 1680235593}
-    - target: {fileID: 2063741766, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2063741766, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
-      propertyPath: Weapon1Prefab
-      value: 
-      objectReference: {fileID: 811062370745517174, guid: a9de5a98f016a334c9a1113e07b1a12f, type: 3}
-    - target: {fileID: 2063741766, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
+    - target: {fileID: 2063741767, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
       propertyPath: WeaponsParent
       value: 
       objectReference: {fileID: 1680235593}
@@ -2060,17 +2048,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4927973787200604, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
   m_PrefabInstance: {fileID: 2029044862}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2063741766 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2063741766, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
-  m_PrefabInstance: {fileID: 2029044862}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7109f4006f8e4e3eb48024fd0f48f62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2063871639
 GameObject:
   m_ObjectHideFlags: 0
