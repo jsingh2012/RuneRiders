@@ -130,4 +130,4 @@ MonoBehaviour:
   minimumDistance: 1e+9
   nearestEnemy: {fileID: 0}
   moveSpeed: 30
-  vfx: {fileID: 0}
+  vfx: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}

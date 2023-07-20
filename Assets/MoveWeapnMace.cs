@@ -55,9 +55,19 @@ public class MoveWeapnMace : MonoBehaviour
         if (vfx)
         {
             GameObject e = Instantiate(vfx);
-            e.transform.position = transform.position;
+            e.transform.position = new Vector3(transform.position.x, 5,transform.position.z);
             e.transform.parent = LevelManager.Instance.VFXHolder.transform;
             Debug.Log("OnDestroy");
+            for(int count = 0; count < EnemyManager.Instance.enemyHolder.transform.childCount; count++)
+            {
+                Transform enemy = EnemyManager.Instance.enemyHolder.transform.GetChild(count);
+                float distance = Vector3.Distance(enemy.position, this.transform.position);
+                if ( distance < minimumDistance)
+                {
+                    nearestEnemy = enemy;
+                    Destroy(enemy);
+                }
+            }
         }
     }
 }
