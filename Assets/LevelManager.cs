@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     private List<Gem> gems = new List<Gem>();
 
     [SerializeField] private int[] powersups;
-    private int nextPowerIndex = 1;
+    public int nextPowerIndex = 1;
 
     private void Awake()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private WeaponAttackArrow attackArrow;
+    [SerializeField] private WeaonAttackMace attackPowerUp1;
     // Start is called before the first frame update
    
     void Start()
@@ -15,7 +16,10 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (LevelManager.Instance.nextPowerIndex == 2 && attackPowerUp1.enabled == false)
+        {
+            attackPowerUp1.enabled = true;
+        }
     }
     
 
