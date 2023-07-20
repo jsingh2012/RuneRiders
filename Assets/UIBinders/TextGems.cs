@@ -16,6 +16,6 @@ public class TextGems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mText.text = "Gems :" + LevelManager.Instance.GetGemsCount();
+        mText.text = "Gems :" + LevelManager.Instance.GetGemsCount() + " / "+ LevelManager.Instance.nextMileStone();
     }
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1366448997103705185}
   - component: {fileID: 2691254316546724804}
   - component: {fileID: 197514907981309710}
-  - component: {fileID: -3738387497048648069}
   - component: {fileID: -5407400894335942404}
   - component: {fileID: -1457560104214765923}
+  - component: {fileID: -4595010842610605496}
   m_Layer: 0
   m_Name: Mace1H_Epic
   m_TagString: Weapon
@@ -86,22 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-3738387497048648069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854720754721900251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7075449af19994558b8046dbf7a0fc96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimumDistance: 0
-  nearestEnemy: {fileID: 0}
-  moveSpeed: 20
-  vfx: {fileID: 100006, guid: 2e7e92bc7175b744ea40878dedfa79e4, type: 3}
 --- !u!65 &-5407400894335942404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -131,3 +115,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4595010842610605496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854720754721900251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a09f630ba04a09a1f5e425270de55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumDistance: 1e+9
+  nearestEnemy: {fileID: 0}
+  moveSpeed: 30
+  vfx: {fileID: 100006, guid: 2e7e92bc7175b744ea40878dedfa79e4, type: 3}

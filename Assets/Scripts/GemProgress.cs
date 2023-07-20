@@ -18,7 +18,8 @@ public class GemProgress : MonoBehaviour
 
     private void updateGemProgress(Gem gem)
     {
-        mSlider.value = (LevelManager.Instance.Gems / 10f);
+        Debug.Log("updateGemProgress "+ (LevelManager.Instance.Gems - LevelManager.Instance.prevMileStone()));
+        mSlider.value = ((LevelManager.Instance.Gems - LevelManager.Instance.prevMileStone()) / (float)LevelManager.Instance.nextMileStone());
         Debug.Log("Mslider mSlider.value "+ mSlider.value);
     }
     

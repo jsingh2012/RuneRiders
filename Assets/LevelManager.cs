@@ -11,6 +11,9 @@ public class LevelManager : MonoBehaviour
     public int Gems { get; set; }
     private List<Gem> gems = new List<Gem>();
 
+    [SerializeField] private int[] powersups;
+    private int nextPowerIndex = 1;
+
     private void Awake()
     {
         Instance = this;
@@ -43,12 +46,26 @@ public class LevelManager : MonoBehaviour
     }
     public string GetGemsCount()
     {
-        return Gems.ToString();
+        int current = Gems - powersups[nextPowerIndex - 1];
+        return current.ToString();
     }
-    void collectGem(Gem gem)
+
+    public int nextMileStone()
+    {
+        return powersups[nextPowerIndex] - powersups[nextPowerIndex - 1];
+    }
+    public int prevMileStone()
+    {
+        return powersups[nextPowerIndex - 1];
+    }
+    public void collectGem(Gem gem)
     {
         Debug.Log("collectGem "+ gem.value);
         Gems += gem.value;
+        if (Gems > powersups[nextPowerIndex])
+        {
+            nextPowerIndex++;
+        }
         gems.Add(gem);
     }
     

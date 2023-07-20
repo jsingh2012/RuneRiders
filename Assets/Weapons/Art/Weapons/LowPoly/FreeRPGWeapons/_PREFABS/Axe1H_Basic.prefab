@@ -129,5 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumDistance: 0
   nearestEnemy: {fileID: 0}
-  moveSpeed: 20
+  moveSpeed: 30
   vfx: {fileID: 0}
