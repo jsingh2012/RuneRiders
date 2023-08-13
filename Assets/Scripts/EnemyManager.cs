@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+//Test10
     public static EnemyManager Instance;
     // Start is called before the first frame update
     [SerializeField] public GameObject enemyHolder;
@@ -11,9 +12,6 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float minDistance = 10f;
     [SerializeField] private float maxDistance = 30f;
-
-
-    
     private void Start()
     {
         Instance = this;
