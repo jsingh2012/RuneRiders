@@ -13,13 +13,10 @@ public class EnemyScript : MonoBehaviour
     {
         //Debug.Log("Jsingh "+ this.gameObject.name);   
     }
-
     // Update is called once per frame
     void Update()
-    {
-        
+    {   
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
