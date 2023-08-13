@@ -16,6 +16,14 @@ public class GemProgress : MonoBehaviour
         GemScript.onGemCollected += updateGemProgress;
     }
 
+
+
+
+
+
+
+
+
     private void updateGemProgress(Gem gem)
     {
         //Debug.Log("updateGemProgress "+ (LevelManager.Instance.Gems - LevelManager.Instance.prevMileStone()));
