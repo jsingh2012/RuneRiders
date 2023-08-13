@@ -12,6 +12,11 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float minDistance = 10f;
     [SerializeField] private float maxDistance = 30f;
+
+
+
+
+    
     private void Start()
     {
         Instance = this;
